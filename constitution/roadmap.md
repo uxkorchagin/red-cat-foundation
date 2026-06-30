@@ -2,6 +2,8 @@
 
 Долгосрочное направление развития Red Cat Foundation. В отличие от соседних документов конституции, roadmap — рабочий документ: пересматривается по мере прохождения этапов, в то время как vision и principles остаются стабильными.
 
+[vision.md](vision.md#образ-будущего) описывает, как выглядит состоявшаяся Foundation — образ результата, без сроков и стадий. Этот документ описывает путь к этому образу: в каком порядке и какими этапами Foundation туда движется. Если изменится путь — roadmap пересматривается. Если меняется сам образ результата — это уже не правка roadmap, а пересмотр vision.
+
 ## Этапность
 
 **Этап 1 — Технический фундамент (текущий).**
@@ -19,6 +21,8 @@
 
 | Что появится | Где | Когда |
 |---|---|---|
+| `skills/documentation-architect.md` | `skills/` | Пересоздаётся по новому Skill Framework ([skills/README.md](../skills/README.md), [templates/skill.md](../templates/skill.md)) — был удалён вместе со старой, не соответствующей фреймворку версией |
+| `skills/governance-qa.md` | `skills/` | Аналогично — пересоздаётся по новому Skill Framework |
 | `skills/ux-standards-architect.md` | `skills/` | Начало Этапа 2 |
 | `skills/designops-architect.md` | `skills/` | Начало Этапа 3 |
 | `knowledge/ux/` | `knowledge/` | Начало Этапа 2 |
