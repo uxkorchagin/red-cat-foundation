@@ -1,0 +1,16 @@
+# CODEOWNERS — владельцы разделов Red Cat Foundation.
+# Сейчас единственный владелец — Lead Designer / Design Systems Architect.
+# Структура рассчитана на будущую команду: по мере роста студии каждая строка
+# может получить отдельного владельца вместо общего.
+
+* redcat.mos@gmail.com
+
+/constitution/   redcat.mos@gmail.com
+/governance/     redcat.mos@gmail.com
+/skills/         redcat.mos@gmail.com
+/knowledge/      redcat.mos@gmail.com
+/templates/      redcat.mos@gmail.com
+/checklists/     redcat.mos@gmail.com
+/platform/       redcat.mos@gmail.com
+/assets/         redcat.mos@gmail.com
+/releases/       redcat.mos@gmail.com
