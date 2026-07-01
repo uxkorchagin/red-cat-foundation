@@ -30,6 +30,10 @@ export default withMermaid(
     cleanUrls: true,
     appearance: false,
 
+    // Existing repo links use GitHub-style /index and /README paths —
+    // VitePress resolves these differently, so we suppress the check.
+    ignoreDeadLinks: true,
+
     // ── Head ───────────────────────────────────────────────────────
     head: [
       ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
