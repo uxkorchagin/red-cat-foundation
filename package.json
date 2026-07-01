@@ -1,0 +1,21 @@
+{
+  "name": "red-cat-foundation",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev .",
+    "build": "vitepress build .",
+    "preview": "vitepress preview .",
+    "check:links": "node scripts/check-links.js",
+    "check:structure": "node scripts/check-structure.js"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3",
+    "vue": "^3.5.13",
+    "mermaid": "^11.4.1",
+    "vitepress-plugin-mermaid": "^2.0.17",
+    "fast-glob": "^3.3.3",
+    "gray-matter": "^4.0.3"
+  }
+}

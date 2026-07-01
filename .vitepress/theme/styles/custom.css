@@ -1,0 +1,606 @@
+/**
+ * Global overrides on top of VitePress defaults.
+ * Implements the Linear instrument-panel aesthetic from DESIGN.md.
+ */
+
+/* ── Reset & base ──────────────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "cv01" on, "ss03" on;
+  background-color: var(--color-onyx);
+}
+
+body {
+  font-family: var(--font-inter-variable);
+  background-color: var(--color-onyx);
+  color: var(--color-snow);
+}
+
+/* ── Navigation ────────────────────────────────────────────────── */
+
+.VPNav {
+  background-color: var(--color-charcoal) !important;
+  border-bottom: 1px solid var(--color-graphite) !important;
+  height: var(--vp-nav-height);
+}
+
+.VPNavBar {
+  background-color: var(--color-charcoal) !important;
+  border-bottom: none !important;
+  backdrop-filter: blur(12px);
+}
+
+.VPNavBar .container {
+  max-width: var(--page-max-width);
+  padding: 0 var(--spacing-24);
+}
+
+/* Nav links */
+.VPNavBarMenuLink {
+  color: var(--color-fog) !important;
+  font-size: var(--text-caption);
+  font-weight: var(--fw-regular);
+  padding: var(--spacing-8) var(--spacing-12);
+  border-radius: var(--radius-md);
+  transition: color 0.15s ease;
+}
+
+.VPNavBarMenuLink:hover,
+.VPNavBarMenuLink.active {
+  color: var(--color-snow) !important;
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+/* Logo */
+.VPNavBarTitle .title {
+  color: var(--color-snow);
+  font-size: var(--text-caption);
+  font-weight: var(--fw-w510);
+  letter-spacing: -0.01em;
+}
+
+/* Social icons */
+.VPSocialLink svg {
+  color: var(--color-fog);
+  transition: color 0.15s ease;
+}
+.VPSocialLink:hover svg {
+  color: var(--color-snow);
+}
+
+/* Search button */
+.VPNavBarSearch .DocSearch-Button {
+  background-color: var(--color-obsidian) !important;
+  border: 1px solid var(--color-graphite) !important;
+  border-radius: var(--radius-md) !important;
+  color: var(--color-slate) !important;
+}
+
+/* ── Sidebar ────────────────────────────────────────────────────── */
+
+.VPSidebar {
+  background-color: var(--color-charcoal) !important;
+  border-right: 1px solid var(--color-graphite) !important;
+  padding-top: var(--spacing-24) !important;
+}
+
+.VPSidebarItem .text {
+  font-size: 13px;
+  font-weight: var(--fw-regular);
+  color: var(--color-fog);
+  line-height: 1.4;
+}
+
+.VPSidebarItem.is-active > .item > .VPLink .text,
+.VPSidebarItem.is-active > .item .text {
+  color: var(--color-snow) !important;
+  font-weight: var(--fw-w510);
+}
+
+.VPSidebarItem.is-active > .item {
+  background-color: rgba(228, 242, 34, 0.06);
+  border-radius: var(--radius-md);
+}
+
+.VPSidebarItem:hover > .item .text {
+  color: var(--color-mist);
+}
+
+.VPSidebarGroup .title {
+  font-size: 11px;
+  font-weight: var(--fw-w590);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-slate);
+  padding: var(--spacing-8) var(--spacing-12);
+  margin-top: var(--spacing-16);
+}
+
+/* Active indicator accent */
+.VPSidebarItem.is-active > .item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 16px;
+  background-color: var(--color-acid-lime);
+  border-radius: 1px;
+}
+
+.VPSidebarItem.is-active > .item {
+  position: relative;
+}
+
+/* ── Content area ───────────────────────────────────────────────── */
+
+.VPDoc .container {
+  max-width: var(--page-max-width);
+}
+
+.VPDoc .content {
+  max-width: var(--vp-content-max-width);
+}
+
+/* ── Typography ─────────────────────────────────────────────────── */
+
+.vp-doc h1 {
+  font-size: var(--text-heading);
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-heading);
+  font-weight: var(--fw-light);
+  color: var(--color-snow);
+  margin-bottom: var(--spacing-16);
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.vp-doc h2 {
+  font-size: var(--text-heading-sm);
+  line-height: var(--leading-heading-sm);
+  letter-spacing: var(--tracking-heading-sm);
+  font-weight: var(--fw-w510);
+  color: var(--color-snow);
+  border-top: 1px solid var(--color-graphite);
+  padding-top: var(--spacing-24);
+  margin-top: var(--spacing-48);
+}
+
+.vp-doc h3 {
+  font-size: var(--text-subheading);
+  line-height: var(--leading-subheading);
+  letter-spacing: var(--tracking-subheading);
+  font-weight: var(--fw-w510);
+  color: var(--color-snow);
+}
+
+.vp-doc h4, .vp-doc h5, .vp-doc h6 {
+  font-size: var(--text-caption);
+  font-weight: var(--fw-w510);
+  color: var(--color-mist);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.vp-doc p {
+  font-size: var(--text-caption);
+  line-height: var(--leading-caption);
+  color: var(--color-fog);
+}
+
+.vp-doc a {
+  color: var(--color-indigo);
+  font-weight: var(--fw-w510);
+  text-decoration: underline;
+  text-decoration-color: rgba(94, 106, 210, 0.3);
+  text-underline-offset: 2px;
+  transition: color 0.15s, text-decoration-color 0.15s;
+}
+
+.vp-doc a:hover {
+  color: #818cf8;
+  text-decoration-color: rgba(129, 140, 248, 0.5);
+}
+
+/* ── Code blocks ─────────────────────────────────────────────────── */
+
+.vp-doc div[class*="language-"] {
+  background-color: var(--color-obsidian) !important;
+  border: 1px solid var(--color-graphite);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.vp-doc div[class*="language-"] code {
+  font-family: var(--font-berkeley-mono);
+  font-size: 13px;
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+  color: var(--color-mist);
+}
+
+/* Language label */
+.vp-doc div[class*="language-"] .lang {
+  color: var(--color-slate);
+  font-family: var(--font-berkeley-mono);
+  font-size: 11px;
+  letter-spacing: -0.01em;
+}
+
+/* Copy button */
+.vp-doc div[class*="language-"] button.copy {
+  background-color: var(--color-graphite);
+  border: 1px solid var(--color-iron);
+  border-radius: var(--radius-md);
+  color: var(--color-fog);
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.vp-doc div[class*="language-"] button.copy:hover {
+  background-color: var(--color-iron);
+  color: var(--color-snow);
+}
+
+/* Inline code */
+.vp-doc :not(pre) > code {
+  font-family: var(--font-berkeley-mono);
+  font-size: 12.5px;
+  background-color: var(--color-obsidian);
+  border: 1px solid var(--color-graphite);
+  border-radius: var(--radius-badges);
+  padding: 1px 5px;
+  color: var(--color-cyan);
+  letter-spacing: -0.01em;
+}
+
+/* ── Tables ──────────────────────────────────────────────────────── */
+
+.vp-doc table {
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-subtle);
+}
+
+.vp-doc table thead tr {
+  background-color: var(--color-obsidian);
+  border-bottom: 1px solid var(--color-graphite);
+}
+
+.vp-doc table thead th {
+  font-size: 11px;
+  font-weight: var(--fw-w590);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-slate);
+  padding: var(--spacing-8) var(--spacing-16);
+  text-align: left;
+}
+
+.vp-doc table tbody tr {
+  border-bottom: 1px solid var(--color-graphite);
+  transition: background-color 0.1s;
+}
+
+.vp-doc table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.vp-doc table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.vp-doc table tbody td {
+  font-size: var(--text-caption);
+  color: var(--color-fog);
+  padding: var(--spacing-12) var(--spacing-16);
+}
+
+/* ── Blockquotes ─────────────────────────────────────────────────── */
+
+.vp-doc blockquote {
+  border-left: 2px solid var(--color-acid-lime);
+  background-color: rgba(228, 242, 34, 0.03);
+  margin: var(--spacing-24) 0;
+  padding: var(--spacing-12) var(--spacing-20);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.vp-doc blockquote p {
+  color: var(--color-mist);
+  font-style: normal;
+  margin: 0;
+}
+
+/* ── Custom containers ───────────────────────────────────────────── */
+
+.vp-doc .custom-block {
+  border-radius: var(--radius-xl);
+  border: 1px solid;
+  padding: var(--spacing-16) var(--spacing-20);
+  margin: var(--spacing-24) 0;
+}
+
+.vp-doc .custom-block.tip {
+  border-color: rgba(94, 106, 210, 0.3);
+  background-color: rgba(94, 106, 210, 0.06);
+}
+
+.vp-doc .custom-block.tip .custom-block-title {
+  color: var(--color-indigo);
+}
+
+.vp-doc .custom-block.warning {
+  border-color: rgba(209, 154, 1, 0.3);
+  background-color: rgba(209, 154, 1, 0.06);
+}
+
+.vp-doc .custom-block.danger {
+  border-color: rgba(235, 87, 87, 0.3);
+  background-color: rgba(235, 87, 87, 0.06);
+}
+
+.vp-doc .custom-block.info {
+  border-color: rgba(98, 102, 109, 0.3);
+  background-color: rgba(98, 102, 109, 0.06);
+}
+
+.vp-doc .custom-block-title {
+  font-size: 13px;
+  font-weight: var(--fw-w590);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-8);
+}
+
+.vp-doc .custom-block p {
+  font-size: var(--text-caption);
+  color: var(--color-mist);
+}
+
+/* ── Outline (right ToC) ─────────────────────────────────────────── */
+
+.VPDocOutlineItem a {
+  font-size: 12px;
+  color: var(--color-slate);
+  transition: color 0.15s;
+}
+
+.VPDocOutlineItem a:hover {
+  color: var(--color-fog);
+}
+
+.VPDocOutlineItem.active a {
+  color: var(--color-acid-lime) !important;
+}
+
+/* ── Home page ───────────────────────────────────────────────────── */
+
+.VPHome {
+  background-color: var(--color-onyx);
+}
+
+.VPHero .name {
+  font-size: var(--text-display-sm);
+  font-weight: var(--fw-light);
+  letter-spacing: var(--tracking-display-sm);
+  line-height: var(--leading-display-sm);
+}
+
+.VPHero .name .clip {
+  background: var(--color-acid-lime);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.VPHero .text {
+  font-size: var(--text-heading-sm);
+  font-weight: var(--fw-light);
+  color: var(--color-fog);
+  letter-spacing: var(--tracking-heading-sm);
+}
+
+.VPHero .tagline {
+  font-size: var(--text-body-lg);
+  color: var(--color-slate);
+  line-height: var(--leading-body-lg);
+}
+
+/* CTA buttons */
+.VPButton.brand {
+  background-color: var(--color-acid-lime) !important;
+  color: #030404 !important;
+  font-weight: var(--fw-w510);
+  font-size: var(--text-caption);
+  border-radius: var(--radius-buttons);
+  border: none !important;
+  box-shadow: var(--shadow-subtle-3);
+  transition: background-color 0.15s;
+}
+
+.VPButton.brand:hover {
+  background-color: #d4e000 !important;
+}
+
+.VPButton.alt {
+  background-color: transparent !important;
+  border: 1px solid var(--color-graphite) !important;
+  color: var(--color-fog) !important;
+  font-size: var(--text-caption);
+  border-radius: var(--radius-buttons);
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.VPButton.alt:hover {
+  border-color: var(--color-iron) !important;
+  color: var(--color-snow) !important;
+}
+
+/* Feature cards */
+.VPFeature {
+  background-color: var(--color-charcoal) !important;
+  border: 1px solid var(--color-graphite) !important;
+  border-radius: var(--radius-cards) !important;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.VPFeature:hover {
+  border-color: var(--color-iron) !important;
+  box-shadow: var(--shadow-xl);
+}
+
+.VPFeature .title {
+  font-size: var(--text-caption) !important;
+  font-weight: var(--fw-w510) !important;
+  color: var(--color-snow) !important;
+}
+
+.VPFeature .details {
+  font-size: 13px !important;
+  color: var(--color-fog) !important;
+  line-height: var(--leading-caption) !important;
+}
+
+/* ── Footer ──────────────────────────────────────────────────────── */
+
+.VPFooter {
+  background-color: var(--color-charcoal) !important;
+  border-top: 1px solid var(--color-graphite) !important;
+}
+
+.VPFooter .message,
+.VPFooter .copyright {
+  font-size: 13px;
+  color: var(--color-slate);
+}
+
+/* ── Doc footer (prev/next) ─────────────────────────────────────── */
+
+.VPDocFooter .pager-link {
+  background-color: var(--color-charcoal);
+  border: 1px solid var(--color-graphite);
+  border-radius: var(--radius-xl);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.VPDocFooter .pager-link:hover {
+  border-color: var(--color-iron);
+  box-shadow: var(--shadow-sm);
+}
+
+.VPDocFooter .title {
+  font-size: var(--text-caption);
+  font-weight: var(--fw-w510);
+  color: var(--color-snow);
+}
+
+.VPDocFooter .desc {
+  font-size: 12px;
+  color: var(--color-slate);
+}
+
+/* ── Local search modal ──────────────────────────────────────────── */
+
+.VPLocalSearchBox .shell {
+  background-color: var(--color-charcoal) !important;
+  border: 1px solid var(--color-graphite) !important;
+  border-radius: var(--radius-cards) !important;
+  box-shadow: var(--shadow-xl) !important;
+}
+
+.VPLocalSearchBox .search-input input {
+  background-color: transparent !important;
+  color: var(--color-snow) !important;
+  font-family: var(--font-inter-variable) !important;
+  font-size: var(--text-caption) !important;
+}
+
+.VPLocalSearchBox .search-input input::placeholder {
+  color: var(--color-slate) !important;
+}
+
+.VPLocalSearchBox .result {
+  border-radius: var(--radius-md) !important;
+}
+
+.VPLocalSearchBox .result.selected {
+  background-color: rgba(228, 242, 34, 0.06) !important;
+}
+
+.VPLocalSearchBox .result-link .title {
+  font-size: var(--text-caption) !important;
+  font-weight: var(--fw-w510) !important;
+  color: var(--color-snow) !important;
+}
+
+/* ── Mermaid diagrams ────────────────────────────────────────────── */
+
+.vp-doc .mermaid {
+  background-color: var(--color-obsidian);
+  border: 1px solid var(--color-graphite);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-24);
+  text-align: center;
+}
+
+/* ── Scrollbars ──────────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-graphite);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-iron);
+}
+
+/* ── Last updated ────────────────────────────────────────────────── */
+
+.VPLastUpdated {
+  font-size: 12px;
+  color: var(--color-slate);
+  font-family: var(--font-berkeley-mono);
+  letter-spacing: -0.01em;
+}
+
+/* ── Edit link ───────────────────────────────────────────────────── */
+
+.VPDocFooter .edit-link a {
+  font-size: 13px;
+  color: var(--color-fog);
+  transition: color 0.15s;
+}
+
+.VPDocFooter .edit-link a:hover {
+  color: var(--color-snow);
+}
+
+/* ── Responsive ──────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .vp-doc h1 {
+    font-size: var(--text-heading-sm);
+  }
+  .VPHero .name {
+    font-size: var(--text-heading-lg);
+  }
+}

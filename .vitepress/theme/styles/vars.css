@@ -1,0 +1,186 @@
+/**
+ * Design tokens — Linear-style dark instrument panel.
+ * Source of truth: DESIGN.md
+ */
+
+:root {
+  /* ── Color palette ──────────────────────────────────────── */
+  --color-onyx:       #08090a;
+  --color-charcoal:   #0f1011;
+  --color-obsidian:   #161718;
+  --color-graphite:   #23252a;
+  --color-iron:       #323334;
+  --color-steel:      #383b3f;
+  --color-slate:      #62666d;
+  --color-fog:        #8a8f98;
+  --color-mist:       #d0d6e0;
+  --color-platinum:   #e5e5e6;
+  --color-snow:       #f7f8f8;
+  --color-acid-lime:  #e4f222;
+  --color-indigo:     #5e6ad2;
+  --color-emerald:    #27a644;
+  --color-crimson:    #eb5757;
+  --color-cyan:       #02b8cc;
+
+  /* ── Surfaces ───────────────────────────────────────────── */
+  --surface-canvas:   #08090a;
+  --surface-nav:      #0f1011;
+  --surface-card:     #161718;
+  --surface-input:    #383b3f;
+
+  /* ── Typography ─────────────────────────────────────────── */
+  --font-inter-variable: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-berkeley-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* Type scale */
+  --text-micro-sm:    12px;
+  --text-caption:     14px;
+  --text-body-lg:     17px;
+  --text-subheading:  20px;
+  --text-heading-sm:  24px;
+  --text-heading:     32px;
+  --text-heading-lg:  48px;
+  --text-display-sm:  64px;
+  --text-display:     72px;
+
+  /* Line heights */
+  --leading-micro-sm: 1.4;
+  --leading-caption:  1.71;
+  --leading-body-lg:  1.6;
+  --leading-subheading: 1.47;
+  --leading-heading-sm: 1.4;
+  --leading-heading:  1.33;
+  --leading-heading-lg: 1.2;
+  --leading-display-sm: 1.13;
+  --leading-display:  1;
+
+  /* Letter spacing */
+  --tracking-subheading:  -0.2px;
+  --tracking-heading-sm:  -0.264px;
+  --tracking-heading:     -0.384px;
+  --tracking-heading-lg:  -0.624px;
+  --tracking-display-sm:  -0.96px;
+  --tracking-display:     -1.58px;
+
+  /* Weights */
+  --fw-light:   300;
+  --fw-regular: 400;
+  --fw-w510:    510;
+  --fw-w590:    590;
+
+  /* ── Spacing (4px grid) ─────────────────────────────────── */
+  --spacing-4:   4px;
+  --spacing-8:   8px;
+  --spacing-12:  12px;
+  --spacing-16:  16px;
+  --spacing-20:  20px;
+  --spacing-24:  24px;
+  --spacing-28:  28px;
+  --spacing-32:  32px;
+  --spacing-36:  36px;
+  --spacing-40:  40px;
+  --spacing-48:  48px;
+  --spacing-56:  56px;
+  --spacing-64:  64px;
+  --spacing-80:  80px;
+  --spacing-96:  96px;
+  --spacing-128: 128px;
+
+  /* ── Border radius ──────────────────────────────────────── */
+  --radius-sm:     2px;
+  --radius-md:     6px;
+  --radius-xl:     12px;
+  --radius-2xl:    16px;
+  --radius-pills:  9999px;
+  --radius-nav:    6px;
+  --radius-cards:  12px;
+  --radius-badges: 2px;
+  --radius-inputs: 6px;
+  --radius-buttons: 6px;
+
+  /* ── Shadows ────────────────────────────────────────────── */
+  --shadow-sm:       rgba(0, 0, 0, 0.4) 0px 2px 4px 0px;
+  --shadow-md:       rgba(0, 0, 0, 0.2) 0px 0px 12px 0px inset;
+  --shadow-subtle:   rgb(35, 37, 42) 0px 0px 0px 1px inset;
+  --shadow-subtle-2: rgba(0, 0, 0, 0.2) 0px 0px 0px 1px;
+  --shadow-subtle-3: rgba(0, 0, 0, 0.01) 0px 5px 2px 0px, rgba(0, 0, 0, 0.04) 0px 3px 2px 0px, rgba(0, 0, 0, 0.07) 0px 1px 1px 0px, rgba(0, 0, 0, 0.08) 0px 0px 1px 0px;
+  --shadow-xl:       rgba(8, 9, 10, 0.6) 0px 4px 32px 0px;
+  --shadow-subtle-6: rgba(255, 255, 255, 0.03) 0px 0px 0px 1px inset, rgba(255, 255, 255, 0.04) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.6) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 4px 4px 0px;
+
+  /* ── Layout ─────────────────────────────────────────────── */
+  --page-max-width: 1200px;
+
+  /* ── VitePress overrides (maps our tokens to VP vars) ───── */
+  --vp-c-bg:             var(--color-onyx);
+  --vp-c-bg-soft:        var(--color-charcoal);
+  --vp-c-bg-elv:         var(--color-obsidian);
+  --vp-c-bg-alt:         var(--color-charcoal);
+
+  --vp-c-text-1:         var(--color-snow);
+  --vp-c-text-2:         var(--color-fog);
+  --vp-c-text-3:         var(--color-slate);
+
+  --vp-c-border:         var(--color-graphite);
+  --vp-c-divider:        var(--color-graphite);
+  --vp-c-gutter:         var(--color-onyx);
+
+  --vp-c-brand-1:        var(--color-acid-lime);
+  --vp-c-brand-2:        var(--color-acid-lime);
+  --vp-c-brand-3:        var(--color-acid-lime);
+  --vp-c-brand-soft:     rgba(228, 242, 34, 0.08);
+
+  --vp-c-indigo-1:       var(--color-indigo);
+  --vp-c-indigo-soft:    rgba(94, 106, 210, 0.1);
+
+  --vp-c-tip-1:          var(--color-indigo);
+  --vp-c-tip-2:          var(--color-indigo);
+  --vp-c-tip-soft:       rgba(94, 106, 210, 0.08);
+
+  --vp-c-warning-1:      #d19a01;
+  --vp-c-warning-soft:   rgba(209, 154, 1, 0.08);
+
+  --vp-c-danger-1:       var(--color-crimson);
+  --vp-c-danger-soft:    rgba(235, 87, 87, 0.08);
+
+  --vp-c-success-1:      var(--color-emerald);
+  --vp-c-success-soft:   rgba(39, 166, 68, 0.08);
+
+  --vp-font-family-base: var(--font-inter-variable);
+  --vp-font-family-mono: var(--font-berkeley-mono);
+
+  --vp-nav-height: 56px;
+  --vp-nav-bg-color: var(--color-charcoal);
+
+  --vp-sidebar-bg-color: var(--color-charcoal);
+  --vp-sidebar-width: 264px;
+
+  --vp-content-max-width: 752px;
+  --vp-layout-max-width: var(--page-max-width);
+
+  --vp-code-bg:          var(--color-obsidian);
+  --vp-code-color:       var(--color-mist);
+  --vp-code-line-highlight-color: rgba(228, 242, 34, 0.04);
+
+  --vp-button-brand-bg:           var(--color-acid-lime);
+  --vp-button-brand-hover-bg:     #d4e000;
+  --vp-button-brand-active-bg:    #c4cf00;
+  --vp-button-brand-border:       var(--color-acid-lime);
+  --vp-button-brand-text:         #030404;
+  --vp-button-brand-hover-text:   #030404;
+
+  --vp-input-bg-color: var(--color-steel);
+  --vp-input-border-color: var(--color-graphite);
+
+  --vp-badge-tip-border:     var(--color-indigo);
+  --vp-badge-tip-text:       var(--color-mist);
+  --vp-badge-tip-bg:         rgba(94, 106, 210, 0.1);
+
+  --vp-badge-warning-border: #d19a01;
+  --vp-badge-warning-bg:     rgba(209, 154, 1, 0.08);
+
+  --vp-badge-danger-border:  var(--color-crimson);
+  --vp-badge-danger-bg:      rgba(235, 87, 87, 0.08);
+
+  --vp-badge-info-border:    var(--color-slate);
+  --vp-badge-info-bg:        rgba(98, 102, 109, 0.1);
+}
