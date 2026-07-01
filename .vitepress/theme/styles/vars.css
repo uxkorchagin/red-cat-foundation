@@ -17,6 +17,8 @@
   --color-platinum:   #e5e5e6;
   --color-snow:       #f7f8f8;
   --color-acid-lime:  #e4f222;
+  --color-brand-red:  #E40E23;
+  --color-brand-red-hover: #c50c1e;
   --color-indigo:     #5e6ad2;
   --color-emerald:    #27a644;
   --color-crimson:    #eb5757;
@@ -124,10 +126,10 @@
   --vp-c-divider:        var(--color-graphite);
   --vp-c-gutter:         var(--color-onyx);
 
-  --vp-c-brand-1:        var(--color-acid-lime);
-  --vp-c-brand-2:        var(--color-acid-lime);
-  --vp-c-brand-3:        var(--color-acid-lime);
-  --vp-c-brand-soft:     rgba(228, 242, 34, 0.08);
+  --vp-c-brand-1:        var(--color-brand-red);
+  --vp-c-brand-2:        var(--color-brand-red);
+  --vp-c-brand-3:        var(--color-brand-red);
+  --vp-c-brand-soft:     rgba(228, 14, 35, 0.08);
 
   --vp-c-indigo-1:       var(--color-indigo);
   --vp-c-indigo-soft:    rgba(94, 106, 210, 0.1);
@@ -159,14 +161,14 @@
 
   --vp-code-bg:          var(--color-obsidian);
   --vp-code-color:       var(--color-mist);
-  --vp-code-line-highlight-color: rgba(228, 242, 34, 0.04);
+  --vp-code-line-highlight-color: rgba(228, 14, 35, 0.06);
 
-  --vp-button-brand-bg:           var(--color-acid-lime);
-  --vp-button-brand-hover-bg:     #d4e000;
-  --vp-button-brand-active-bg:    #c4cf00;
-  --vp-button-brand-border:       var(--color-acid-lime);
-  --vp-button-brand-text:         #030404;
-  --vp-button-brand-hover-text:   #030404;
+  --vp-button-brand-bg:           var(--color-brand-red);
+  --vp-button-brand-hover-bg:     var(--color-brand-red-hover);
+  --vp-button-brand-active-bg:    #a00a19;
+  --vp-button-brand-border:       var(--color-brand-red);
+  --vp-button-brand-text:         #ffffff;
+  --vp-button-brand-hover-text:   #ffffff;
 
   --vp-input-bg-color: var(--color-steel);
   --vp-input-border-color: var(--color-graphite);

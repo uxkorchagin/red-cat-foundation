@@ -104,7 +104,7 @@ body {
 }
 
 .VPSidebarItem.is-active > .item {
-  background-color: rgba(228, 242, 34, 0.06);
+  background-color: rgba(228, 14, 35, 0.07);
   border-radius: var(--radius-md);
 }
 
@@ -123,20 +123,26 @@ body {
 }
 
 /* Active indicator accent */
+.VPSidebarItem.is-active > .item {
+  position: relative;
+  overflow: visible;
+}
+
 .VPSidebarItem.is-active > .item::before {
   content: '';
   position: absolute;
-  left: 0;
+  left: -1px;
   top: 50%;
   transform: translateY(-50%);
   width: 2px;
   height: 16px;
-  background-color: var(--color-acid-lime);
+  background-color: var(--color-brand-red);
   border-radius: 1px;
 }
 
-.VPSidebarItem.is-active > .item {
-  position: relative;
+/* Ensure nested active items are also highlighted */
+.VPSidebarItem .VPSidebarItem.is-active > .item .text {
+  color: var(--color-snow) !important;
 }
 
 /* ── Content area ───────────────────────────────────────────────── */
@@ -307,8 +313,8 @@ body {
 /* ── Blockquotes ─────────────────────────────────────────────────── */
 
 .vp-doc blockquote {
-  border-left: 2px solid var(--color-acid-lime);
-  background-color: rgba(228, 242, 34, 0.03);
+  border-left: 2px solid var(--color-brand-red);
+  background-color: rgba(228, 14, 35, 0.03);
   margin: var(--spacing-24) 0;
   padding: var(--spacing-12) var(--spacing-20);
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
@@ -379,7 +385,7 @@ body {
 }
 
 .VPDocOutlineItem.active a {
-  color: var(--color-acid-lime) !important;
+  color: var(--color-brand-red) !important;
 }
 
 /* ── Home page ───────────────────────────────────────────────────── */
@@ -396,7 +402,7 @@ body {
 }
 
 .VPHero .name .clip {
-  background: var(--color-acid-lime);
+  background: var(--color-brand-red);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -417,18 +423,24 @@ body {
 
 /* CTA buttons */
 .VPButton.brand {
-  background-color: var(--color-acid-lime) !important;
-  color: #030404 !important;
+  background-color: var(--color-brand-red) !important;
+  color: #ffffff !important;
   font-weight: var(--fw-w510);
   font-size: var(--text-caption);
   border-radius: var(--radius-buttons);
   border: none !important;
-  box-shadow: var(--shadow-subtle-3);
-  transition: background-color 0.15s;
+  box-shadow: 0 0 0 1px rgba(228, 14, 35, 0.3), var(--shadow-subtle-3);
+  transition: background-color 0.15s, transform 0.1s, box-shadow 0.15s;
 }
 
 .VPButton.brand:hover {
-  background-color: #d4e000 !important;
+  background-color: var(--color-brand-red-hover) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 1px rgba(228, 14, 35, 0.4), 0 4px 12px rgba(228, 14, 35, 0.25);
+}
+
+.VPButton.brand:active {
+  transform: translateY(0);
 }
 
 .VPButton.alt {
@@ -534,7 +546,7 @@ body {
 }
 
 .VPLocalSearchBox .result.selected {
-  background-color: rgba(228, 242, 34, 0.06) !important;
+  background-color: rgba(228, 14, 35, 0.08) !important;
 }
 
 .VPLocalSearchBox .result-link .title {
@@ -592,6 +604,81 @@ body {
 
 .VPDocFooter .edit-link a:hover {
   color: var(--color-snow);
+}
+
+/* ── Animations ──────────────────────────────────────────────────── */
+
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sidebar-slide-in {
+  from { opacity: 0; transform: translateX(-4px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Page content fade in on navigation */
+.vp-doc {
+  animation: page-fade-in 0.22s ease-out;
+}
+
+.VPHome .VPHero {
+  animation: page-fade-in 0.3s ease-out;
+}
+
+.VPHome .VPFeatures {
+  animation: page-fade-in 0.35s ease-out 0.05s both;
+}
+
+/* Sidebar links */
+.VPSidebarItem > .item {
+  transition: background-color 0.12s ease, color 0.12s ease;
+}
+
+/* Feature cards */
+.VPFeature {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease !important;
+}
+
+.VPFeature:hover {
+  transform: translateY(-2px);
+}
+
+/* Nav links */
+.VPNavBarMenuLink {
+  transition: color 0.12s ease, background-color 0.12s ease !important;
+}
+
+/* Alt button hover */
+.VPButton.alt {
+  transition: border-color 0.15s ease, color 0.15s ease, transform 0.1s ease !important;
+}
+
+.VPButton.alt:hover {
+  transform: translateY(-1px);
+}
+
+/* Doc footer pager links */
+.VPDocFooter .pager-link {
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease !important;
+}
+
+.VPDocFooter .pager-link:hover {
+  transform: translateY(-1px);
+}
+
+/* ── Logo in nav ─────────────────────────────────────────────────── */
+
+.VPNavBarTitle .logo {
+  height: 22px;
+  width: auto;
 }
 
 /* ── Responsive ──────────────────────────────────────────────────── */

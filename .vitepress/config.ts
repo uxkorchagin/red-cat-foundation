@@ -74,13 +74,16 @@ export default withMermaid(
         lineColor: '#62666d',
         secondaryColor: '#0f1011',
         tertiaryColor: '#23252a',
-        activationBorderColor: '#e4f222',
+        activationBorderColor: '#E40E23',
         activationBkgColor: '#23252a',
       },
     },
 
     // ── Navigation & sidebar (auto-generated) ──────────────────────
     themeConfig: {
+      logo: '/logo.svg',
+      siteTitle: false,
+
       nav: generateNav(),
       sidebar: generateSidebar(),
 

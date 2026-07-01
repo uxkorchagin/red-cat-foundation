@@ -7,7 +7,7 @@ hero:
   tagline: Внутренняя инженерная платформа студии Red Cat. Единый источник истины для проектирования цифровых продуктов.
   actions:
     - theme: brand
-      text: Начать с Конституции
+      text: Перейти к дизайн-системе
       link: /constitution/vision
     - theme: alt
       text: GitHub
