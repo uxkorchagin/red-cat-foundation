@@ -27,6 +27,7 @@ export default withMermaid(
     cacheDir: './.vitepress/cache',
 
     // ── URL & appearance ───────────────────────────────────────────
+    base: '/red-cat-foundation/',
     cleanUrls: true,
     appearance: false,
 
